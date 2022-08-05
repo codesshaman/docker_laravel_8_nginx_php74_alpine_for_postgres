@@ -17,7 +17,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: app/Dockerfile
+      dockerfile: Dockerfile
     tty:  true
     user: 1000:1000
     restart: unless-stopped

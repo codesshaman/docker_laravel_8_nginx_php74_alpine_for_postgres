@@ -11,7 +11,8 @@ RUN set -ex \
 COPY composer-setup.php . 
 
 RUN php composer-setup.php && \
-    mv composer.phar /usr/local/bin/composer && rm composer-setup.php
+    mv composer.phar /usr/local/bin/composer && \
+    rm composer-setup.php
 
 RUN docker-php-ext-install pdo pdo_pgsql
 

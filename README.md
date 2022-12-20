@@ -3,25 +3,30 @@ Minimal docker container image (219 MB): laravel with nginx and php-fpm without 
 
 Your need docker and docker-compose in your operation system.
 
-Clone: git clone https://github.com/codesshaman/minimal_docker_laravel_nginx_php.git
+Clone: 
+```
+git clone https://github.com/codesshaman/docker_laravel_8_nginx_php74_alpine_for_postgres.git
+```
 
 GO TO FOLDER:
-cd minimal_docker_laravel_nginx_php
+
+``cd docker_laravel_8_nginx_php74_alpine_for_postgres``
 
 CREATE LARAVEL:
-composer create-project laravel/laravel
+
+``docker exec -it php74 composer create-project laravel/laravel``
 
 BUILD (first start):
-docker-compose up -d --build
+
+``make build``
 
 RUN:
-docker-compose up -d
+
+``make``
 
 STOP:
-docker-compose down
 
-CONNECT:
-docker exec -it nginx_laravel sh
+``make down``
 
 OPEN:
 http://localhost/

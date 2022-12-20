@@ -8,6 +8,9 @@ RUN set -ex \
   && apk --no-cache add \
     postgresql-dev
 
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && php -r "unlink('composer-setup.php');"
+
 RUN docker-php-ext-install pdo pdo_pgsql
 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* var/cache/apk* && set -x
